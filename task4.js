@@ -55,7 +55,10 @@ async function main() {
 
   const approvalResponse = await tokenContract0
     .connect(connectedWallet)
-    .approve(swapRouterAddress, approvalAmount); // as given in 'https://eips.ethereum.org/EIPS/eip-20'
+    .approve(swapRouterAddress, approvalAmount)
+    .then((approvalResponse) => {
+      console.log("approvalResponse", approvalResponse);
+    }); // as given in 'https://eips.ethereum.org/EIPS/eip-20'
   // i.e "approve" => Allows _spender to withdraw from your account multiple times, up to the _value amount.
   // If this function is called again it overwrites the current allowance with _value.
   // function approve(address _spender, uint256 _value) public returns (bool success)
