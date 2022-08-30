@@ -1,9 +1,6 @@
 const axios = require("axios");
 const URL = "https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3";
 const { ethers } = require("ethers");
-const {
-  abi: SwapRouterABI,
-} = require("@uniswap/v3-periphery/artifacts/contracts/interfaces/ISwapRouter.sol/ISwapRouter.json");
 const ERC20ABI = require("./abi.json");
 require("dotenv").config();
 
